@@ -32,7 +32,6 @@ const MessageContainer = () => {
 
   useEffect(() => {
     socket.on("newMessage", (message) => {
-      console.log("message received : ", message);
       if (selectedConversation._id === message.conversationId) {
         setMessages((prev) => [...prev, message]);
       }
